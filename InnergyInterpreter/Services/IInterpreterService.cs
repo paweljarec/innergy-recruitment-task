@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using InnergyInterpreter.Models;
+using System.Collections.Generic;
 
 namespace InnergyInterpreter.Services
 {
     public interface IInterpreterService
     {
-        public void Execute(IEnumerable<string> input);
+        public IEnumerable<Material> Execute(IEnumerable<string> input);
     }
 }
