@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InnergyInterpreter.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,8 +31,10 @@ namespace InnergyInterpreter
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "INNERGY Interpreter API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "INNERGY Interpreter API", Version = "v2" });
             });
+
+            services.AddScoped<IInterpreterService, InterpreterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
